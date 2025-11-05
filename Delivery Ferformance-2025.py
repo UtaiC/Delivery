@@ -145,9 +145,8 @@ else:
 # -------------------------
 # Exclude list
 # -------------------------
-exclued = ['Part no.','KOSHIN','HOME EXPERT','ELECTROLUX','TBKK','CAVAGNA','Thai GMB','1050B375','1050B375']
+exclued = ['Part no.','KOSHIN','HOME EXPERT','ELECTROLUX','TBKK','CAVAGNA','Thai GMB','1050B375','1050B375','Z0011949A','Z0011951A','Z0020588A']
 DataMerges = DataMerges[~DataMerges['Part no.'].isin(exclued)].copy()
-
 # -------------------------
 # DC Production
 # -------------------------
@@ -321,4 +320,5 @@ if not Repleted_Report.empty:
 else:
     st.info("No Repleted Orders detected in selected week range.")
 #################
+
 
