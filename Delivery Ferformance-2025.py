@@ -222,14 +222,14 @@ OverPCT = pct(SUM_OVER_ERO, sum_FC)
 # Summary Table
 # -------------------------
 summary_items = [
-    ('Forecasted EDI Volumes', sum_FC, '100%'),
-    ('Ordered and Repeated Order (ERO)', sum_ERO, EROPCT),
-    ('Sales (Stock Availability and Production)', sum_SALES, SalesPCT),
+    ('Forecasted (EDI)', sum_FC, '100%'),
+    ('Ordered (ERO)', sum_ERO, EROPCT),
+    ('Delivery (Sales)', sum_SALES, SalesPCT),
     ('EDI/ERO-Orders Met', SUM_MEET_ERO, MeetPCT),
-    ('Non-EDI Orders', SUM_NoFC, NoFC_PCT),
-    ('No-ERO (Un-ordered Forecast)', -SUM_NO_ERO, -NOPCT),
-    ('Under-ERO (Forecast Exceeds Order)', -SUM_LESS_ERO, -LessPCT),
-    ('Over-EDI (Ordered Exceeds Forecast)', SUM_OVER_ERO, OverPCT),
+    ('No EDI but EOR', SUM_NoFC, NoFC_PCT),
+    ('No EOR but EDI', -SUM_NO_ERO, -NOPCT),
+    ('Under-ERO (OVER EDI)', -SUM_LESS_ERO, -LessPCT),
+    ('Over-ERO (Under EDI)', SUM_OVER_ERO, OverPCT),
 ]
 
 df_summary = pd.DataFrame({
@@ -321,3 +321,4 @@ if not Repleted_Report.empty:
 else:
     st.info("No Repleted Orders detected in selected week range.")
 #################
+
